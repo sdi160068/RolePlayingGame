@@ -1,0 +1,13 @@
+1 Chill
+2 Freeze
+3 Frostbite
+4 Frostbolt
+5 Brain_Freeze
+6 Fingers_of_Frost
+7 Ice_Lance
+8 Frozen_Orb
+9 Icy_Veins
+10 Deep_Freeze
+11 Ice_Beam
+12 Ice_Age
+13 Magikos_Pagos

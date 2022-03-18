@@ -1,0 +1,13 @@
+1 Thunderbolt
+2 Bolt_Strike
+3 Pikachu
+4 Charge
+5 Charge_Beam
+6 Discharge
+7 Electric_Terrain
+8 Electrify
+9 Electro_Ball
+10 Gigavolt_Havoc
+11 Voltage_Bomb
+12 Spark
+13 ThunderPunch

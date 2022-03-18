@@ -1,0 +1,13 @@
+1 Flame
+2 Torch
+3 Eruption
+4 Flare
+5 Blaze
+6 Inferno
+7 Fireball
+8 Explosion
+9 Meteor
+10 Salamander’s_Blade
+11 Dragon_Fire
+12 Volcano
+13 Fire_Rain

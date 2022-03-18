@@ -1,0 +1,30 @@
+1 Flame
+2 Torch
+3 Eruption
+4 Flare
+5 Blaze
+6 Inferno
+7 Fireball
+8 Explosion
+9 Meteor
+10 Salamander’s_Blade
+11 Dragon Fire
+12 Sinkhole
+13 Pit
+14 Chasm
+15 Vine
+16 Thorn
+17 Nettle
+18 Rockfall
+19 Landslide
+20 Avalanche
+21 Chill
+22 Freeze
+23 Frostbite
+24 Douse
+25 Deluge
+26 Flood
+27 Wave
+28 Surge
+29 Tsunami
+30 Nyad’s Lore
