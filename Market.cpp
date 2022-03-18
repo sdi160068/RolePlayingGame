@@ -23,7 +23,7 @@ Market::~Market(){
 }
 void Market::set_Items(){
 	srand(time(NULL));
-        int i,p;
+    unsigned int i,p;
 	p = 0;
 	int Name;
 	int Damage;
@@ -192,7 +192,7 @@ void Market::set_Items(){
 }
 
 void Market::get_Items(){
-	int i=1;
+	unsigned int i=1;
 	cout << i;
 	this->get_Weapon();
 	i++;
@@ -282,7 +282,7 @@ void Market::get_LightningSpell(){
 
 
 char Market::buy_Items(Party* party){
-	int i;
+	unsigned int i;
 	cout << "       M   A   R   K   E   T     " << endl << endl;
 	cout << "  I N V E N T O R Y " << endl;
         cout << endl;
@@ -403,7 +403,7 @@ void Market::sell_Items(Party* party){
 				if (inventory.weapons.size()!=0){
 					thing = 'k';
 					while(thing!='e'){
-						for(int i=0; i<inventory.weapons.size(); i++){
+						for(unsigned int i=0; i<inventory.weapons.size(); i++){
 							cout << i+1 <<  inventory.weapons[i].getName() << ": " << inventory.weapons[i].getHands() << "-handed | +" << inventory.weapons[i].getDamage() << " damage | Lvl. Requirement: " << inventory.weapons[i].getLevelReq() << "  costs : " << inventory.weapons[i].getPrice()/2 << endl;
 						}
 						cout <<"\n\nChoose a weapon to sell  : ";
@@ -423,7 +423,7 @@ void Market::sell_Items(Party* party){
 				if (inventory.armors.size()!=0){
 					thing = 'k';
 					while(thing!='e'){
-						for(int i=0; i<inventory.armors.size(); i++){
+						for(unsigned int i=0; i<inventory.armors.size(); i++){
 							cout << i+1 << inventory.armors[i].getName() << ": +" << inventory.armors[i].getDefence() << " defence | Lvl. Requirement: " << inventory.armors[i].getLevelReq() <<  "  costs : " << inventory.armors[i].getPrice()/2 << endl;
 						}
 						cout <<"\n\nChoose an armor to sell  : ";
@@ -443,7 +443,7 @@ void Market::sell_Items(Party* party){
 				if (inventory.potions.size()!=0){
 					thing = 'k';
                                         while(thing!='e'){
-						for(int i=0; i<inventory.potions.size(); i++){
+						for(unsigned int i=0; i<inventory.potions.size(); i++){
 							cout <<  i+1 << inventory.potions[i].getName()<<": +"<<inventory.potions[i].getStrBuff()<<" Str, +"<<inventory.potions[i].getDexBuff()<<" Dex, +"<< inventory.potions[i].getAgiBuff()<< " Agi, " << inventory.potions[i].getHpRestore()<<" Hp restore, "<<inventory.potions[i].getMpRestore()<<" Mp restore" << "  costs : " << inventory.potions[i].getPrice()/2 << endl;
 						}
 						cout <<"\n\nChoose a potion to sell  : ";
@@ -463,7 +463,7 @@ void Market::sell_Items(Party* party){
 				if (inventory.iceSpells.size()!=0){
 					thing = 'k';
                                         while(thing!='e'){
-						for(int i=0; i<inventory.iceSpells.size(); i++){
+						for(unsigned int i=0; i<inventory.iceSpells.size(); i++){
 							cout <<  i+1 << inventory.iceSpells[i].getName()<<": "<<inventory.iceSpells[i].getMinDamage()<<"-"<<inventory.iceSpells[i].getMaxDamage()<<" damage | "<<inventory.iceSpells[i].getMpCost()<<" MP cost, -"<<inventory.iceSpells[i].getDamageReduction()<<" enemy damage" << "  costs : " << inventory.iceSpells[i].getPrice()/2 << endl;
 						}
 						cout <<"\n\nChoose a iceSpell to sell  : ";
@@ -483,7 +483,7 @@ void Market::sell_Items(Party* party){
 				if (inventory.fireSpells.size()!=0){
 					thing = 'k';
                                         while(thing!='e'){
-						for(int i=0; i<inventory.fireSpells.size(); i++){
+						for(unsigned int i=0; i<inventory.fireSpells.size(); i++){
 							cout <<  i+1 << inventory.fireSpells[i].getName()<<": "<<inventory.fireSpells[i].getMinDamage()<<"-"<<inventory.fireSpells[i].getMaxDamage()<<" damage | "<<inventory.fireSpells[i].getMpCost()<<" MP cost, -"<<inventory.fireSpells[i].getDefenceReduction()<<" enemy defence\n" << "  costs : " << inventory.fireSpells[i].getPrice()/2 << endl;
 						}
 						cout <<"\n\nChoose a fireSpell to sell  : ";
@@ -504,7 +504,7 @@ void Market::sell_Items(Party* party){
 				if (inventory.lightningSpells.size()!=0){
 					thing = 'k';
                                         while(thing!='e'){
-						for(int i=0; i<inventory.lightningSpells.size(); i++){
+						for(unsigned int i=0; i<inventory.lightningSpells.size(); i++){
 							cout <<  i+1 << inventory.lightningSpells[i].getName()<<": "<<inventory.lightningSpells[i].getMinDamage()<<"-"<<inventory.lightningSpells[i].getMaxDamage()<<" damage | "<<inventory.lightningSpells[i].getMpCost()<<" MP cost, -"<<inventory.lightningSpells[i].getDodgeReduction()<<"% enemy dodge" << "  costs : " << inventory.lightningSpells[i].getPrice()/2 << endl;
 						}
 						cout <<"\n\nChoose a lightningSpell to sell  : ";

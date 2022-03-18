@@ -10,6 +10,7 @@ using namespace std;
 
 void Move(){
 	int potionChoice;
+	char exit = 1;
 	Party player;
 	Market market;
 	Grid G;
@@ -23,7 +24,7 @@ void Move(){
 	G.print(W,L);
 	cout << endl << "Move with 'w','s','a','d'  OR   press 'q' to quit" << endl << endl;
 //	while(method != 'q'){
-	while(1){
+	while(exit){
 		cout << "PRESS KEY :  ";
 		cin >> method;
 		cout << endl << endl << endl << endl ;
@@ -57,6 +58,7 @@ void Move(){
 					G.print(W,L);}
 				break;
 			case 'q':
+				exit = 0;
 				break;
 			case 'z':
 				break;
@@ -90,11 +92,11 @@ void Move(){
 				if((G.get_Point(W+1,L) == 2) || (G.get_Point(W-1,L) == 2) || (G.get_Point(W,L-1) == 2) || (G.get_Point(W,L+1) == 2)){
 					method = market.buy_Items(&player);
 					G.print(W,L);
-					market.~Market();}
-			else {
-	            cout << "||||||||||||||||||||||||||||||||||||||||||||||" << endl;
-        	    cout << "               W R O N G   K E Y              " << endl;
-        	    cout << "||||||||||||||||||||||||||||||||||||||||||||||" << endl;
+				}
+				else {
+					cout << "||||||||||||||||||||||||||||||||||||||||||||||" << endl;
+					cout << "               W R O N G   K E Y              " << endl;
+					cout << "||||||||||||||||||||||||||||||||||||||||||||||" << endl;
 				}break;
 			default:
 				cout << "||||||||||||||||||||||||||||||||||||||||||||||" << endl;

@@ -474,14 +474,14 @@ void Character::setMoney(int a){
 void Character::changeEquipment(Inventory inventory, Equipment equipment){
 	cout<<"[[[Inventory]]]\n";
 	if (inventory.weapons.size()!=0){
-		for(int i=0; i<inventory.weapons.size(); i++){
+		for(unsigned int i=0; i<inventory.weapons.size(); i++){
 			cout << inventory.weapons[i].getName() << ": " << inventory.weapons[i].getHands() << "-handed | +" << inventory.weapons[i].getDamage() << " damage | Lvl. Requirement: " << inventory.weapons[i].getLevelReq() << endl;
 		}
 	}
 	else
 		cout <<"NO WEAPONS"<<endl;
 	if (inventory.armors.size()!=0){
-		for(int i=0; i<inventory.armors.size(); i++){
+		for(unsigned int i=0; i<inventory.armors.size(); i++){
 			cout << inventory.armors[i].getName() << ": +" << inventory.armors[i].getDefence() << " defence | Lvl. Requirement: " << inventory.armors[i].getLevelReq() << endl;
 		}
 	}
@@ -495,8 +495,8 @@ void Character::changeEquipment(Inventory inventory, Equipment equipment){
 	cout << equipment.armor.getName() << ": +" << equipment.armor.getDefence() << " defence\n\n";
 	
 	char choice;
-	int weaponChoice;
-	int armorChoice;
+	unsigned int weaponChoice;
+	unsigned int armorChoice;
 	int handChoice;
 	bool weaponLoop;
 	bool armorLoop;
@@ -507,7 +507,7 @@ void Character::changeEquipment(Inventory inventory, Equipment equipment){
 			case '1':
 				if (inventory.weapons.size()!=0){
 					cout << "[[[Weapons]]]\n";
-					for(int i=0; i<inventory.weapons.size(); i++){
+					for(unsigned int i=0; i<inventory.weapons.size(); i++){
 						cout << i+1 << ". "<<inventory.weapons[i].getName() << ": " << inventory.weapons[i].getHands() << "-handed | +" << inventory.weapons[i].getDamage() << " damage | Lvl. Requirement: " << inventory.weapons[i].getLevelReq() << endl;
 					}
 					cout << "Which weapon do you want to equip?\n";
@@ -558,7 +558,7 @@ void Character::changeEquipment(Inventory inventory, Equipment equipment){
 				break;
 			case '2':
 				if (inventory.armors.size()!=0){
-					for(int i=0; i<inventory.armors.size(); i++){
+					for(unsigned int i=0; i<inventory.armors.size(); i++){
 						cout << i+1 << ". " <<inventory.armors[i].getName() << ": +" << inventory.armors[i].getDefence() << " defence | Lvl. Requirement: " << inventory.armors[i].getLevelReq() << endl;
 					}
 					cout << "Which armor do you want to equip?\n";

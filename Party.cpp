@@ -161,7 +161,7 @@ bool Party::partyHasFainted(){
 }
 void Party::displayStats(vector<Enemy> enemy, int amountOfEnemies){
 	this->checkStats();
-	for(unsigned int i=0; i<amountOfEnemies; i++){
+	for(int i=0; i<amountOfEnemies; i++){
 		cout << "[[[" << enemy[i].getName() << " ("<< enemy[i].getMonsterType() <<") Lvl. " << enemy[i].getLevel() << "]]]\n";
 		cout << "HP: "<< enemy[i].getHP() << "/" << enemy[i].getMaxHP() << endl;
 		cout << "DAMAGE: " << enemy[i].getMinDamage() << "-" << enemy[i].getMaxDamage()<< endl;
@@ -185,7 +185,6 @@ char Party::battleStart(){
 	int damageDealt;
 	int randomSpellDamage;
 	int randomPhysicalDamage;
-	int commandInt;
 	int heroLevelSum;
 	int monsterLevel;
 	int monsterLevelSum;
@@ -219,14 +218,14 @@ char Party::battleStart(){
 			victory=false;
 			endOfFight=true;
 		}
-		for(int k=0; k<amountOfCharacters; k++){
+		for(unsigned int k=0; k<amountOfCharacters; k++){
 			if(!character[k].hasFainted()){
 				cout<<"\n\n_____________________\n";
 				for(unsigned int i=0; i<amountOfCharacters; i++){
 					cout << character[i].getName() << " ("<< character[i].getClass() << " Lvl." << character[i].getLevel() <<") [HP: " << character[i].getHP() << "/" << character[i].getMaxHP() << "  MP: " << character[i].getMP() <<"/" << character[i].getMaxMP() << "]\n";
 				}
 				cout << "\n\n";
-				for(int j=0; j<amountOfEnemies; j++){
+				for(unsigned int j=0; j<amountOfEnemies; j++){
 					cout << j+1 << ". " << enemy[j].getName() << " ("<< enemy[j].getMonsterType() << " Lvl." << enemy[j].getLevel() <<") [HP: " << enemy[j].getHP() << "/" << enemy[j].getMaxHP() << "]\n";
 				}
 				cout<<"______________________\n";
@@ -354,7 +353,7 @@ char Party::battleStart(){
 							cin>>magicChoice;
 							switch(magicChoice){
 								case '1'://------------------------------------------------------------------------------------------------------------------------------------------------------------------
-									for(int l=0; l<inventory.iceSpells.size(); l++){
+									for(unsigned int l=0; l<inventory.iceSpells.size(); l++){
 										cout<<l+1<<". "<<inventory.iceSpells[l].getName()<<": "<<inventory.iceSpells[l].getMinDamage()<<"-"<<inventory.iceSpells[l].getMaxDamage()<<" BASE damage | "<<inventory.iceSpells[l].getMpCost()<<" MP cost, -"<<inventory.iceSpells[l].getDamageReduction()<<" enemy damage\n";
 									}
 									cout<<"Which spell will they use?"<<endl;
@@ -474,7 +473,7 @@ char Party::battleStart(){
 									}while(loop);
 									break;
 								case '2'://---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-									for(int l=0; l<inventory.fireSpells.size(); l++){
+									for(unsigned int l=0; l<inventory.fireSpells.size(); l++){
 										cout<<l+1<<". "<<inventory.fireSpells[l].getName()<<": "<<inventory.fireSpells[l].getMinDamage()<<"-"<<inventory.fireSpells[l].getMaxDamage()<<" BASE damage | "<<inventory.fireSpells[l].getMpCost()<<" MP cost, -"<<inventory.fireSpells[l].getDefenceReduction()<<" enemy defence\n";
 									}
 									cout<<"Which spell will they use?"<<endl;
@@ -591,7 +590,7 @@ char Party::battleStart(){
 									}while(loop);
 									break;
 								case '3':
-									for(int l=0; l<inventory.lightningSpells.size(); l++){
+									for(unsigned int l=0; l<inventory.lightningSpells.size(); l++){
 										cout<<l+1<<". "<<inventory.lightningSpells[l].getName()<<": "<<inventory.lightningSpells[l].getMinDamage()<<"-"<<inventory.lightningSpells[l].getMaxDamage()<<" BASE damage | "
 											<<inventory.lightningSpells[l].getMpCost()<<" MP cost, -"<<inventory.lightningSpells[l].getDodgeReduction()<<"% enemy dodge\n\n";
 									}
@@ -713,7 +712,7 @@ char Party::battleStart(){
 							}
 			  				break;
 			  			case '3':
-			  				for(int l=0; l<inventory.potions.size(); l++){
+			  				for(unsigned int l=0; l<inventory.potions.size(); l++){
 								cout<< l+1 <<". "<<inventory.potions[l].getName()<<": +"<<inventory.potions[l].getStrBuff()<<" Str, +"<<inventory.potions[l].getDexBuff()<<" Dex, +"<< inventory.potions[l].getAgiBuff()<<" Agi, "
 									<<inventory.potions[l].getHpRestore()<<" Hp restore, "<<inventory.potions[l].getMpRestore()<<" Mp restore\n";
 							}
@@ -764,9 +763,9 @@ char Party::battleStart(){
 			endOfFight=true;
 			break;
 		}
-		for(int k=0; k<amountOfEnemies; k++){
+		for(unsigned int k=0; k<amountOfEnemies; k++){
 			if(enemy[k].getHP()>0){
-				int l=0;
+				unsigned int l=0;
 				do{
 					if (!character[l].hasFainted()){
 						loop=false;
@@ -801,13 +800,13 @@ char Party::battleStart(){
 			if (endOfFight) break;
 		}
 		/*End of turn*/
-		for(int k=0; k<amountOfCharacters; k++){
+		for(unsigned int k=0; k<amountOfCharacters; k++){
 			if (!character[k].hasFainted()){
 				if(character[k].getHP() != character[k].getMaxHP())	character[k].setHP(1);
 				if(character[k].getMP() != character[k].getMaxMP())	character[k].setMP(1);
 			}
 		} /*regeneration sequence*/
-		for(int k=0; k<amountOfEnemies; k++){
+		for(unsigned int k=0; k<amountOfEnemies; k++){
 			if (!enemy[k].hasFainted())
 				if(enemy[k].getHP() != enemy[k].getMaxHP())	enemy[k].setHP(1);
 		}
@@ -847,14 +846,3 @@ char Party::battleStart(){
 		}
 	return 'z';
 }
-
-
-
-
-
-
-
-
-
-
-
